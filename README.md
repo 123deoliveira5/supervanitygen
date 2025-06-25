@@ -42,6 +42,10 @@ Installing prerequisites on Ubuntu:
 
     $ sudo apt-get install build-essential automake autoconf libtool libgmp3-dev
 
+Installing prerequisites on macOS (Homebrew):
+
+    $ brew install automake autoconf libtool gmp
+
 Build Instructions
 ------------------
 Simply run make:
@@ -52,6 +56,9 @@ This will automatically configure the secp256k1 library and compile the
 project using default options. To change compile options in secp256k1, cd to
 secp256k1 and run configure with your new options, and then rerun make in the
 top level directory.
+
+If the configure tools are not available, the Makefile will automatically use
+the included `basic-config.h` from secp256k1 so the build can proceed.
 
 If the gmp development library is not installed on your system, you may remove
 -lgmp from the LDLIBS line in the Makefile. See below for other prerequisites.
